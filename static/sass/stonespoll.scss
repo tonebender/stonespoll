@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700');
+@import url('https://fonts.googleapis.com/css?family=Vollkorn:400,700');
+
+$darker_color: #900;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* This is the base font-size, which all em and rem are based on */
+html {
+  /* font-family: 'Source Serif Pro', serif; */
+  font-family: 'Vollkorn', serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+body { 
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+h1 {
+  font-family: 'Rock Salt', cursive;
+}
+
+h2, h3 {
+  /* font-family: 'Source Serif Pro', serif; */
+  font-family: 'Vollkorn', serif;
+  font-weight: 700;
+}
+
+h1 { font-size: 3.125em; }
+h2 { font-size: 2.3125em; }
+h3 { font-size: 1.8em; }
+
+a {
+  text-decoration: none;
+  color: $darker_color;
+}
+
+p {
+  font-size: 1.4em;
+}
+
+p.fineprint {
+  font-size: 1.1em;
+}
+
+p.larger {
+  font-size: 1.7em;
+}
+
+p#warning {
+  margin-top: 10%;
+}
+
+p#startlink {  /* This will be shown via JS */
+  visibility: hidden;
+}
+
+div#outer_container {
+  width: 100%;
+}
+
+div#main_header {
+  width: 1050px;
+  margin: 0 auto;
+}
+
+div#contents {
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 3%;
+}

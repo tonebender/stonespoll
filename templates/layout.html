@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Which Rolling Stone Are You?</title>
+    <link rel='stylesheet' href='static/stylesheets/stonespoll.css'>
+    <link rel="stylesheet" href="static/font-awesome-4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="outer_container">
+      
+      <div id="main_header">
+        <h1>Which Rolling Stone Are You?</h1>
+        <!-- <h3>A Personality Test</h3> -->
+      </div>
+      
+      <!-- Actual page contents: -->
+      {% block contents %}{% endblock %}
+      
+    </div>
+    <!-- <script src="{{ url_for('static', filename='javascript/stonespoll.js') }}"></script> -->
+    <script src="static/javascript/stonespoll.js"></script>
+  </body>
+</html>

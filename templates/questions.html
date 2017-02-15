@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block contents %}
+
+<div id="contents">
+  <div id="question">
+    <p><b>This personality test</b> will tell you which one of the seven Rolling Stones
+    members Mick Jagger, Keith Richards, Charlie Watts, Ronnie Wood,
+    Bill Wyman and Mick Taylor you resemble the most!</p>
+    
+    <p>You will be asked N questions about yourself and your preferences in a
+    wide range of subjects such as music, social habits, and drugs. 
+    Based on the test creator's Stones history knowledge (itself based on 
+    dozens of books, films and hours of <a href="http://www.iorr.org">IORR</a> 
+    browsing), it will calculate which Rolling Stone you &rdquo;are&rdquo;!</p>
+    
+    <noscript><p class="larger"><b>Oh noes!</b> You don't have Javascript
+    enabled in your browser. Please open the settings in your web browser and
+    enable Javascript in order for this test to work (reload this page for
+    the changes to take effect).</p></noscript>
+    
+    <p id="startlink" class="larger"><a href="#" onclick="get_question(0);return false;">
+      Click here</a> to start taking the test!</p>
+    
+    <p id="warning" class="fineprint"><b>Warning!</b> This test is purely for 
+    fun, but in order to get a result as &rdquo;accurate&rdquo; as possible, it 
+    will ask you some potentially sensitive questions related to things like 
+    drug use and sex. You'll probably want to do this test without other people
+    watching.</p>
+    
+    <p class="fineprint"><b>Privacy note:</b> None of your answers will be 
+    logged. You will remain anonymous, but you will be given the option to save
+    your final result (i.e. which Stone you became) in the statistics database.
+    </p>
+    
+  </div>
+</div>
+
+{% endblock %}
+

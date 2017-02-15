@@ -1,0 +1,10 @@
+# gitignore for stonespoll
+
+__pycache__/
+*.py[cod]
+*.db
+venv/
+*.scssc
+*.map
+jquery*.js
+font-awesome-4.7.0/
