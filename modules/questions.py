@@ -13,10 +13,10 @@ class Question:
 
     Attributes:
         number (int): The index number of the question
-        qtext (str): The question
-        answers (list w/ str): All possible answers to the question
+        qtext (string): The question
+        answers (list w/ strings): All possible answers to the question
         results (list w/ lists w/ integers): A matrix where the answers (rows)
-            are mapped to band members (cols), and each position will have an
+            are mapped to band members (cols), and each position will hold an
             integer (pos or neg) denoting how much each respective answer 
             affects each member score.
     """
@@ -24,8 +24,18 @@ class Question:
         self.number = number
         self.qtext = qtext
         self.answers = answers
-        self.results = [[0 for x in range(numof_members)]  # Matrix!
-                        for y in range(numof_answers)]
+        #self.results = [[0 for x in range(numof_members)]  # Matrix!
+        #                for y in range(numof_answers)]
+        i = 0
+        rez = []
+        for y in range(numof_answers):
+            row = []
+            for x in range(numof_members):
+                print "y is " + str(y) + " and x is " + str(x)
+                row.append(i)
+                i += 1
+            rez.append(row)
+        self.results = rez
         
     def __str__(self):
         qstring = 'Question: ' + str(self.number) + \
@@ -51,11 +61,16 @@ def fetch_question(qnumber):
 
 @questions.route('/')
 def quiz():
-    q = fetch_question(0)
-    print q
-    print q.to_json()
+    """ Show the main page where we'll put the quiz questions through JS """
     return render_template('questions.html')
 
-@questions.route('/question')
-def question():
-    return json.dumps(fetch_question(0).to_json())
+
+@questions.route('/question/<qnumber>', methods=['GET'])
+def question(qnumber=None):
+    
+    """ Get a question number, fetch the question and return it
+    as a JSON object. """
+    
+    if qnumber == None or not qnumber.isdigit():
+        abort(404);
+    return json.dumps(fetch_question(int(qnumber)).to_json())
