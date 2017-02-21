@@ -1,3 +1,5 @@
+# stonespoll
+
 WHICH ROLLING STONE ARE YOU?
 
 A web poll by Henrik Lidbjörk, created with
