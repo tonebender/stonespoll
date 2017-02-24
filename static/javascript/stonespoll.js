@@ -13,7 +13,6 @@ function byId(elementId) {
  * Put an error message where the poll question otherwise should be.
  */
 function applyError(msg) {
-    console.log("Applyng error: " + msg);
     byId('question').innerHTML = '<p>' + msg + '</p>';
 }
 
@@ -27,7 +26,6 @@ function getQuestion(qNumber) {
         if (xmlhttp.readyState == XMLHttpRequest.DONE) {
             if (xmlhttp.status == 200) {
                 qobject = JSON.parse(this.responseText);
-                console.log(this.responseText); 
                 applyQuestion(qobject);
             } else
                 applyError('Error fetching poll question via ajax: ' + xmlhttp.status);
